@@ -1,0 +1,47 @@
+vip.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guessing Number Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guess the Number Game</h1>
+  <button onclick="startGame()">Start Game</button>
+  <div id="message"></div>
+
+  <script>
+    function startGame() {
+      // Generate random number between 1 and 10
+      let randomNumber = Math.floor(Math.random() * 10) + 1;
+      
+      // Ask user for a guess
+      let userGuess = prompt("Guess a number between 1 and 10:");
+
+      if (userGuess == randomNumber) {
+        document.getElementById("message").innerText = 
+          "🎉 Excellent! You guessed it right!";
+      } else {
+        document.getElementById("message").innerText = 
+          "❌ Oops! The correct number was " + randomNumber + ". Try again!";
+      }
+    }
+  </script>
+</body>
+</html>
